@@ -30,3 +30,27 @@ i2c_init (I2C_BUS, I2C_SCL_PIN, I2C_SDA_PIN, IAQCORE_I2C_FREQ);
 i2c_set_clock_stretch (I2C_BUS, IAQCORE_I2C_CLOCK_STRETCH);
 ...
 ```
+Once I2C interfaces to be used are initialized, function ```iaq_core_init_sensor``` has to be called for iAQ Core sensor to initialize the sensor and to check its availability as well as its error state. The parameters specify the I2C bus to which it is connected and its I2C slave address.
+
+```
+...
+iaq_core_init_sensor (I2C_BUS, IAQCORE_I2C_ADDR);
+...
+```
+
+Function ```iaq_core_init_sensor``` returns a pointer to the sensor device data structure or NULL in case of error.
+
+If initialization of the sensor was successful, the sensor **starts Heating Up phase which takes about 5 minutes**.
+Two functions are used for busy waiting until Heating up and/or sensor reading is finishing. When heating up and/or sensor reading is done, return false and exits the loop.
+
+>     while (iaq_core_is_heating(iaq_core)){
+>             ...
+>             }
+> 
+>     while (iaq_core_is_measuring(iaq_core)){
+>             ...
+>             };
+
+
+
+
