@@ -43,14 +43,15 @@ Function ```iaq_core_init_sensor``` returns a pointer to the sensor device data 
 If initialization of the sensor was successful, the sensor **starts Heating Up phase which takes about 5 minutes**.
 Two functions are used for busy waiting until Heating up and/or sensor reading is finishing. When heating up and/or sensor reading is done, return false and exits the loop.
 
->     while (iaq_core_is_heating(iaq_core)){
->             ...
->             }
-> 
->     while (iaq_core_is_measuring(iaq_core)){
->             ...
->             };
-
+```
+     while (iaq_core_is_heating(iaq_core)){
+             ...
+             }
+ 
+     while (iaq_core_is_measuring(iaq_core)){
+             ...
+             };
+```
 
 
 
