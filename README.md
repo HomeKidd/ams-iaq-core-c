@@ -1,2 +1,2 @@
-# ams-iaq-core-c
+# AMS iAQ Core C library
 Library for AMS iAQ Core C Air quality sensor using esp-open-rtos
