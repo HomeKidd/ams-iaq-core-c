@@ -53,14 +53,13 @@ dev->error_code = IAQ_CORE_I2C_OK;
 
 
 
-  //if (buffer[2] == IAQ_CORE_OK ) {
 
     // if *iaq* is not NULL return IAQ sensor values
     if (etvoc != 0) *etvoc =  (data[IAQ_CORE_TVOC_MSB_OFFSET]<<8) + (data[IAQ_CORE_TVOC_LSB_OFFSET]<<0);
     if (eco2  != 0) *eco2  =  (data[IAQ_CORE_CO2_MSB_OFFSET]<<8)  + (data[IAQ_CORE_CO2_LSB_OFFSET]<<0);
     //if (stat != 0) *stat  =  (data[IAQ_CORE_STATUS_OFFSET]<<0); 
 
-    //} 
+  
  
     return true;
 
