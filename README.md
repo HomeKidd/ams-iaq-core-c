@@ -22,7 +22,7 @@ Following figure shows the hardware configuration for ESP8266.
 
 Before using the iAQ Core driver, function ```i2c_init``` needs to be called for each I2C interface to setup them.
 
-**Please note:** CCS811 uses clock streching that can be longer than the default I2C clock stretching. Therefore the clock stretching parameter of I2C has to be set to at least ```CCS811_I2C_CLOCK_STRETCH```.
+**Please note:** iAQ Core C uses clock streching that can be longer than the default I2C clock stretching. Therefore the clock stretching parameter of I2C has to be set to at least ```IAQCORE_I2C_CLOCK_STRETCH```.
 
 ```
 ...
