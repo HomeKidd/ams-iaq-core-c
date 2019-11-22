@@ -86,19 +86,12 @@ bool iaq_core_is_heating(iaq_core_sensor_t *dev);
  * sensor data. If some of the results are not needed, the corresponding
  * pointer parameters can be set to NULL.
  *
- * Please note: If the function is called and no new data are available,
- * e.g., due to the sensor mode time tolerance of 2%, the function still
- * returns successfully. In this case, the results of the last measurement
- * are returned and the error code CCS811_DRV_NO_NEW_DATA is set.
  *
- * Please note: In *ccs811_mode_250ms*, only RAW data are available. In
- * that case, the function fails with error_code CCS811_DRV_NO_IAQ_DATA
- * if parameters *iaq_tvoc* and *iaq_eco2* are not NULL.
  * @param  sensor    pointer to the sensor device data structure
  * @param  iaq_tvoc  TVOC total volatile organic compound (0 - 1187 ppb)
  * @param  iaq_eco2  eCO2 equivalent CO2 (400 - 8192 ppm)
- * @param  raw_i     current through the sensor used for measuring (0 - 63 uA)
- * @param  raw_v     voltage across the sensor measured (0 - 1023 = 1.65 V)
+ * @param  stat      current status of the sensor
+ * @param  resist    sensor resistance (raw data)
  *
  * @return           true on success, false on error
  */
